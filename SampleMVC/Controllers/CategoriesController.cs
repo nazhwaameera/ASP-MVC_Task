@@ -138,5 +138,11 @@ public class CategoriesController : Controller
         return RedirectToAction("Index");
     }
 
+    public IActionResult DisplayCategories()
+    {
+        var results = _categoryBLL.GetAll();
+        return View(results);
+    }
+
 
 }

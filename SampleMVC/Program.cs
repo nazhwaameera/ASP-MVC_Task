@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 
 //register DI
 builder.Services.AddScoped<ICategoryBLL, CategoryBLL>();
+builder.Services.AddScoped<IArticleBLL, ArticleBLL>();
 
 var app = builder.Build();
 
@@ -17,6 +18,6 @@ app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Categories}/{action=DisplayCategories}/{id?}");
 
 app.Run();
